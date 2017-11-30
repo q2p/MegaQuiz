@@ -1,0 +1,24 @@
+{
+	"compileOnSave": true,
+	"compilerOptions": {
+		"module": "system",
+		"noImplicitAny": true,
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"outFile": "./script.js",
+		"sourceMap": false
+	},
+	"files": [
+		"./ts/global.ts",
+		"./ts/dialogues.ts",
+		"./ts/features.ts",
+		"./ts/optimized.ts",
+		"./ts/introducement.ts",
+		"./ts/rating.ts",
+		"./ts/offBigTitle.ts",
+		"./ts/zone0.ts",
+		"./ts/second_character.ts",
+		"./ts/shake.ts",
+		"./ts/script.ts"
+	]
+}

@@ -1,0 +1,6 @@
+.test {
+	filter: brightness(120%);
+	filter: contrast(1.5);
+	filter: drop-shadow(0 0 3px rgba(100,0,0,0.5));
+	filter: grayscale(0);
+}

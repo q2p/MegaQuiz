@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+/*
+	image-rendering: optimizeSpeed;             // Older versions of FF          
+	image-rendering: -moz-crisp-edges;          // FF 6.0+                      
+	image-rendering: -webkit-optimize-contrast; // Safari                       
+	image-rendering: -o-crisp-edges;            // OS X & Windows Opera (12.02+)
+	image-rendering: pixelated;                 // Awesome future-browsers      
+	image-rendering: optimize-contrast;
+*/
+
+$mFont: _font_mine, sans-serif;
+$mFontSize: 2.5vh;
+$mTitleFontSize: 3.5vw;
+$textColor: #ffffff;
+$navBG: #1f1f1f;
+$inactiveDark: #7f7f7f;
+$minWidth: 800px;
+$minHeight: 400px;
+
+$readableSize: 4vh;
+
+$zone0Sky: #fefbac;
+
+//Статьи
+$paddingSide: 10vw;
+$paddingTop: 6vw;
+$articleEase: 0.4s;
+
+// Карта
+$mapOffset: 32px;
+
+// Шарики
+$circleOpacity: 0.5;
+$circleEaseTime: 0.3s;
+
+// Анонс
+$barHeight: 4px;
+$barOffset: 32px;
+
+// Указатель
+$triangleHeight: 16px;
+$pointerDistance: 4px;
+$pointerEaseTime: 0.3s;
+
+// Copyright
+$copyrightFont: 12px;
+$copyrightOffset: 12px;
+
+// Outline
+$outlineShadowMultiplyer: 0.04;
+$outlineStrokeMultiplyer: 0.015;
+$outlineColor: #000000;
+
+@mixin stretch($position) {
+	position: $position;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+}
+
+@mixin absoluteStretch {
+	@include stretch(absolute);
+}
+
+@mixin fixedStretch {
+	@include stretch(fixed);
+}
+
+@mixin mTransition($args...) {
+	transition-timing-function: ease-out;
+	-webkit-transition-timing-function: ease-out;
+	-moz-transition-timing-function: ease-out;
+	-ms-transition-timing-function: ease-out;
+
+	transition: $args;
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+}
+
+@mixin outline($fontSize, $color) {
+	text-shadow:
+		(-$fontSize*$outlineShadowMultiplyer) (-$fontSize*$outlineShadowMultiplyer) 0 $color, // --
+		( $fontSize*$outlineShadowMultiplyer) (-$fontSize*$outlineShadowMultiplyer) 0 $color, // +-
+		(-$fontSize*$outlineShadowMultiplyer) ( $fontSize*$outlineShadowMultiplyer) 0 $color, // -+
+		( $fontSize*$outlineShadowMultiplyer) ( $fontSize*$outlineShadowMultiplyer) 0 $color, // ++
+
+		(-$fontSize*$outlineShadowMultiplyer) 0                                     0 $color, // -0
+		( $fontSize*$outlineShadowMultiplyer) 0                                     0 $color, // +0
+		0                                     (-$fontSize*$outlineShadowMultiplyer) 0 $color, // 0-
+		0                                     ( $fontSize*$outlineShadowMultiplyer) 0 $color; // 0+
+
+		// TODO: надо? -webkit-text-stroke: $fontSize*$outlineStrokeMultiplyer $outlineColor;
+}

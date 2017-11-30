@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+@import "global";
+
+$blendColor: #e30000;
+$fadeIn: 1s;
+
+#japhet_tower {
+	width: 100%;
+	height: 100vh;
+
+	position: relative;
+
+	#japhet_tower_bg {
+		position: absolute;
+
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+
+		background-color: $blendColor;
+
+		#japhet_tower_window {
+			position: absolute;
+			max-width: 100vh;
+			margin: auto;
+
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+
+			overflow: hidden;
+
+			background-color: $blendColor;
+
+			.japhet_tower_blend {
+				position: absolute;
+				top:0;
+				width: 4vh;
+				height: 100%;
+				display: none;
+				&#japhet_tower_blend_left {
+					left: 0;
+					background: linear-gradient(to right, $blendColor, rgba(0,0,0,0));
+				}
+				&#japhet_tower_blend_right {
+					right: 0;
+					background: linear-gradient(to left, $blendColor, rgba(0,0,0,0));
+				}
+			}
+
+			@media all and (min-aspect-ratio: 1/1) {
+				.japhet_tower_blend {
+					display:block;
+				}
+			}
+
+			#japhet_tower_fore {
+				background-image: url(i/WingedStranger.png);
+
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+			}
+		}
+	}
+
+	#japhet_tower_text_wrapper {
+		position: relative;
+
+		padding-top:10vh;
+		padding-bottom:10vh;
+
+		max-width: 140vh;
+
+		width: 100%;
+
+		margin-left: auto;
+		margin-right: auto;
+
+		#japhet_tower_text {
+			.japhet_tower_quote {
+				text-align: justify;
+				padding-left: 10vh;
+				padding-right: 10vh;
+
+				&:nth-child(odd)  {
+					padding-right: calc(50% + 5vh);
+				}
+				&:nth-child(even) {
+					padding-left: calc(50% + 5vh);
+				}
+			}
+		}
+	}
+}

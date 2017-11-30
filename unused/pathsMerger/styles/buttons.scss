@@ -1,0 +1,63 @@
+
+$container_padding: 1vh;
+$arrow_size: 3vh;
+$distance: 1vh;
+
+$container_color: #ffffff;
+$arrow_color: #000000;
+
+@mixin sbtn {
+	width: $arrow_size;
+	height: $arrow_size;
+	padding: $container_padding;
+
+	opacity: 0.7;
+
+	cursor: pointer;
+
+	background-color: $container_color;
+
+	&:after {
+		display: block;
+		content: "";
+		width: 0;
+		height: 0;
+		border-top: $arrow_size/2 solid transparent;
+		border-bottom: $arrow_size/2 solid transparent;
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+#scroll_buttons_container {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	#scroll_buttons_wrapper {
+		margin: auto;
+		width: (2*(2*$container_padding+$arrow_size))+$distance;
+		#scroll_button_left {
+			@include sbtn;
+
+			float: left;
+
+			&:after {
+				border-left: 0 solid transparent;
+				border-right: $arrow_size solid $arrow_color;
+			}
+		}
+		#scroll_button_right {
+			@include sbtn;
+
+			float: right;
+
+			&:after {
+				border-left: $arrow_size solid $arrow_color;
+				border-right: 0 solid transparent;
+			}
+		}
+	}
+}

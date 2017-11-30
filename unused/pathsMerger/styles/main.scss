@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+@import "fonts";
+
+@import "global";
+@import "optimized";
+@import "buttons";
+@import "introducement";
+@import "offBigTitle";
+@import "zone0";
+@import "second_character";
+@import "shake";
+@import "japhet_tower";
+@import "floors";
+
+* {
+	padding: 0px;
+	margin: 0px;
+	font: {
+		family: $mFont;
+		weight: normal;
+	}
+}
+html {
+	color: #ff77aa;
+	width: 100%;
+	min-height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: #000000;
+	size: 50vh;
+}
+body {
+	width: 100%;
+	min-height: 100%;
+}
+
+.outlinedBlock {
+	@include outline($readableSize, $outlineColor);
+}
+
+.readableBlock {
+	font-size: $readableSize;
+	color: $textColor;
+}
+
+.highlight {
+	font-weight: bold;
+}
+
+.hidden {
+	display: none !important;
+}
+
+#viewport {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+	from { opacity: 1; }
+	to   { opacity: 0; }
+}

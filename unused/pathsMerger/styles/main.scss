@@ -1,33 +1,25 @@
 @charset "UTF-8";
 
-@import "fonts";
-
 @import "global";
 @import "optimized";
 @import "buttons";
-@import "introducement";
-@import "offBigTitle";
-@import "zone0";
-@import "second_character";
-@import "shake";
-@import "japhet_tower";
 @import "floors";
 
 * {
 	padding: 0px;
 	margin: 0px;
 	font: {
-		family: $mFont;
+		family: Roboto;
 		weight: normal;
 	}
 }
 html {
-	color: #ff77aa;
+	color: #000;
 	width: 100%;
 	min-height: 100%;
 	overflow-x: hidden;
 	overflow-y: auto;
-	background-color: #000000;
+	background-color: #fff;
 	size: 50vh;
 }
 body {
@@ -35,8 +27,28 @@ body {
 	min-height: 100%;
 }
 
-.outlinedBlock {
-	@include outline($readableSize, $outlineColor);
+canvas {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+}
+
+#box {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	width: 65vw;
+}
+
+#ui {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	width: 35vw;
 }
 
 .readableBlock {

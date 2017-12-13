@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 /*
-	image-rendering: optimizeSpeed;             // Older versions of FF          
-	image-rendering: -moz-crisp-edges;          // FF 6.0+                      
-	image-rendering: -webkit-optimize-contrast; // Safari                       
+	image-rendering: optimizeSpeed;             // Older versions of FF
+	image-rendering: -moz-crisp-edges;          // FF 6.0+
+	image-rendering: -webkit-optimize-contrast; // Safari
 	image-rendering: -o-crisp-edges;            // OS X & Windows Opera (12.02+)
-	image-rendering: pixelated;                 // Awesome future-browsers      
+	image-rendering: pixelated;                 // Awesome future-browsers
 	image-rendering: optimize-contrast;
 */
 
@@ -54,10 +54,10 @@ $outlineColor: #000000;
 
 @mixin stretch($position) {
 	position: $position;
-	left: 0px;
-	right: 0px;
-	top: 0px;
-	bottom: 0px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
 
 @mixin absoluteStretch {

@@ -1,6 +1,7 @@
 {
 	"compileOnSave": true,
 	"compilerOptions": {
+		"target": "es2015",
 		"module": "system",
 		"noImplicitAny": true,
 		"removeComments": true,
@@ -9,15 +10,8 @@
 		"sourceMap": false
 	},
 	"files": [
-		"./ts/dialogues.ts",
-		"./ts/features.ts",
-		"./ts/optimized.ts",
-		"./ts/introducement.ts",
-		"./ts/rating.ts",
-		"./ts/offBigTitle.ts",
-		"./ts/zone0.ts",
-		"./ts/second_character.ts",
-		"./ts/shake.ts",
-		"./ts/script.ts"
+		"./ts/main.ts",
+		"./ts/regions.ts",
+		"./ts/map.ts"
 	]
 }

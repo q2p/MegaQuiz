@@ -21,18 +21,128 @@
 		weight: normal;
 	}
 }
-html {
-	color: #ff77aa;
-	width: 100%;
-	min-height: 100%;
-	overflow-x: hidden;
-	overflow-y: auto;
-	background-color: #000000;
-	size: 50vh;
+html, body {
+	@include absoluteStretch;
 }
-body {
-	width: 100%;
-	min-height: 100%;
+
+$mapBackground: #89cdf1;
+$coatColor: rgb(0, 192, 226);
+$coatReflect: rgb(45, 224, 255);
+$coatColorHover: rgb(255, 82, 73);
+$coatReflectHover: rgb(255, 120, 112);
+$coatSquare: 50px;
+$coatReflectSize: 3px;
+$coatTriangleWidth: 15px;
+$coatTriangleHeight: 15px;
+$coatPadding: 5px;
+
+#map_container {
+	@include absoluteStretch;
+
+	overflow: hidden;
+
+	background-color: $mapBackground;
+
+	#map_box {
+		@include absoluteStretch;
+
+		display: flex;
+
+		justify-content: center;
+		align-items: center;
+
+		#map_group {
+			@include absoluteStretch;
+
+			&.fading {
+				transition-property: transform;
+				transition-timing-function: ease-out;
+				transition-duration: 3s;
+			}
+
+			#map_lines {
+				@include absoluteStretch;
+			}
+
+			.coat_centre {
+				position: absolute;
+				.coat_container {
+					position: absolute;
+					width: $coatSquare;
+					height: $coatTriangleHeight + $coatSquare + $coatReflectSize;
+					bottom: 0px;
+					left: - $coatSquare / 2;
+
+					cursor: pointer;
+
+					.coat_square {
+						width: $coatSquare;
+						height: $coatSquare;
+						background-color: $coatColor;
+						border-top-style: solid;
+						border-top-color: $coatReflect;
+						border-top-width: $coatReflectSize;
+						position: relative;
+
+						.coat_img {
+							position: absolute;
+							top: $coatPadding;
+							right: $coatPadding;
+							width: $coatSquare - 2 * $coatPadding;
+							height: $coatSquare - 2 * $coatPadding;
+							object-fit: contain;
+						}
+					}
+
+					.coat_triangle {
+						width: 0;
+						height: 0;
+						border-bottom-style: none;
+						border-left: $coatTriangleWidth/2 solid transparent;
+						border-right: $coatTriangleWidth/2 solid transparent;
+						border-top: $coatTriangleHeight solid $coatColor;
+
+						margin-left: ($coatSquare - $coatTriangleWidth)/2;
+					}
+
+					&:hover .coat_square {
+						background-color: $coatColorHover;
+						border-top-color: $coatReflectHover;
+					}
+
+					&:hover .coat_triangle {
+						border-top-color: $coatColorHover;
+					}
+				}
+
+				.map_city_name {
+					color: #000;
+					font-weight: bold;
+					transform: translate(-50%,100%);
+					text-shadow:
+					 -1px -1px 0 #fff,
+						1px -1px 0 #fff,
+					 -1px  1px 0 #fff,
+						1px  1px 0 #fff,
+					 -1px  0px 0 #fff,
+						1px  0px 0 #fff,
+						0px -1px 0 #fff,
+						0px  1px 0 #fff;
+				}
+			}
+		}
+	}
+
+	#fade_cover {
+		@include absoluteStretch;
+
+		background-color: #fff;
+		transition-duration: 3s;
+		transition-timing-function: ease-in-out;
+		transition-property: opacity;
+
+		pointer-events:none;
+	}
 }
 
 .outlinedBlock {
